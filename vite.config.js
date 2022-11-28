@@ -1,7 +1,7 @@
 /*
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-28 14:34:07
+ * @LastEditTime: 2022-11-28 17:33:00
  * @LastEditors: PX
  * @Description:  
  */
@@ -12,6 +12,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [vue()],
   resolve: {
     alias: {
