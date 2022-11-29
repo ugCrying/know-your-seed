@@ -51,11 +51,11 @@ const btnDisabled = computed(() => !salt.value || !ciphertext.value)
 function getSeed() {
   if (btnDisabled.value) return
   try {
-    let decode1 = atob(ciphertext.value)
-    console.log(1, decode1)
-    let decode1Filter = decode1.replace(salt.value, '')
-    console.log(2, decode1Filter)
-    seed.value = atob(decode1Filter)
+    let decode = atob(ciphertext.value)
+    console.log(1, decode)
+    let decodeFilter = decode.replace(salt.value, '')
+    console.log(2, decodeFilter)
+    seed.value = atob(decodeFilter)
     console.log(3, seed.value)
   } catch (err) {
     alert(err.message)
