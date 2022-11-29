@@ -1,14 +1,32 @@
-# base-seed
+<!--
+ * @Author: PX
+ * @Date: 2022-11-28 14:31:52
+ * @LastEditTime: 2022-11-29 10:23:20
+ * @LastEditors: PX
+ * @Description:  
+-->
+# Know Your Seed
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is used to encrypt and decrypt important strings such as passwords and mnemonics, and store your own passwords safely by backing up ciphertexts.
+## Coding Principle
 
-## Recommended IDE Setup
+The salt value is mixed through Base64, and the encryption and decryption are performed twice to obtain the ciphertext and the real password in both directions.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Instructions
 
-## Customize configuration
+The project is a pure script without using any requests and network connections.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Get Ciphertext
+
+* First find a salt value that you can remember.
+* Fill in the salt value and the real password or mnemonic.
+* Generate ciphertext.
+* Backup your own ciphertext.
+
+### Parse the ciphertext back to a password or mnemonic
+
+* Fill in the salt value and back up the ciphertext.
+* Parse the real password or mnemonic.
 
 ## Project Setup
 

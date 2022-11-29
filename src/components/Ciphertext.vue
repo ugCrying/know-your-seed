@@ -19,7 +19,7 @@
       />
     </div>
     <div class="row">
-      <button :class="['btn', btnDisabled ? 'disabled' : '']" @click="getSeed">
+      <button :class="['btn', btnDisabled ? 'disabled' : '']" @click="getCiphertext">
         {{
           btnDisabled
             ? 'Please enter salt value and seed'
@@ -48,7 +48,7 @@ let ciphertext = ref('')
 
 const btnDisabled = computed(() => !salt.value || !seed.value)
 
-function getSeed() {
+function getCiphertext() {
   if (btnDisabled.value) return
   try {
     let encode = btoa(seed.value)
