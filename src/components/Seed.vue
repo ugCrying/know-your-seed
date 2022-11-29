@@ -50,7 +50,7 @@ function getSeed() {
   if (btnDisabled.value) return
   try {
     let decode = atob(ciphertext.value)
-    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace('==', '')
+    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace(/=/g, '')
     let decodeFilter = decode.replace(saltBase64Part, '')
     seed.value = decodeURIComponent(atob(decodeFilter))
   } catch (err) {

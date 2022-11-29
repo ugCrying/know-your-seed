@@ -53,7 +53,7 @@ function getCiphertext() {
   if (btnDisabled.value) return
   try {
     const seedBase64 = btoa(encodeURIComponent(seed.value))
-    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace('==', '')
+    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace(/=/g, '')
     const seedBase64FlagIndex = Math.floor(Math.random() * 10) % seedBase64.length
     let mixBase64 = seedBase64.slice(0, seedBase64FlagIndex) + saltBase64Part + seedBase64.slice(seedBase64FlagIndex)
     console.log('mixBase64', mixBase64)
