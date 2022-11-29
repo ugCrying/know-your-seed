@@ -1,5 +1,5 @@
 <template>
-  <div class="salt-comp">
+  <div class="seed-comp">
     <div class="row salt">
       <span class="label salt-label">Salt:</span>
       <input
@@ -58,7 +58,7 @@ function getSeed() {
     seed.value = atob(decodeFilter)
     console.log(3, seed.value)
   } catch (err) {
-    alert(err.message)
+    alert('Encoding error, please check whether the salt value or ciphertext is correct.')
   }
 }
 
@@ -79,7 +79,7 @@ function copySeed() {
 </script>
 
 <style lang="less">
-.salt-comp {
+.seed-comp {
   display: flex;
   flex-direction: column;
   align-items: center;

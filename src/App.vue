@@ -1,7 +1,7 @@
 <!--
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-29 10:01:03
+ * @LastEditTime: 2022-11-29 11:15:52
  * @LastEditors: PX
  * @Description:  
 -->
@@ -12,19 +12,18 @@
       <span :class="[curType === 1 ? 'active' : '']" @click="changeType(1)"
         >Generate Ciphertext</span
       >
-      <!-- | -->
       <span :class="[curType === 2 ? 'active' : '']" @click="changeType(2)"
         >Get Seed</span
       >
     </div>
     <Ciphertext v-if="curType === 1" />
-    <Salt v-else />
+    <Seed v-else />
   </div>
   <!-- <RouterView /> -->
 </template>
 <script setup>
 import { ref } from 'vue'
-import Salt from '@/components/Salt.vue'
+import Seed from '@/components/Seed.vue'
 import Ciphertext from '@/components/Ciphertext.vue'
 
 let curType = ref(1)
