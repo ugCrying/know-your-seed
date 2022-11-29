@@ -1,7 +1,7 @@
 <!--
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-29 09:45:52
+ * @LastEditTime: 2022-11-29 10:01:03
  * @LastEditors: PX
  * @Description:  
 -->
@@ -59,6 +59,8 @@ function changeType(type) {
     }
 
     span {
+      height: 100%;
+      align-items: center;
       color: grey;
       cursor: pointer;
       flex: 0 0 50%;
