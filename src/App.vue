@@ -1,7 +1,7 @@
 <!--
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-28 17:22:39
+ * @LastEditTime: 2022-11-29 09:45:52
  * @LastEditors: PX
  * @Description:  
 -->
@@ -43,6 +43,7 @@ function changeType(type) {
   justify-content: center;
   padding: 0 20px;
   .header {
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -10,7 +10,7 @@
       />
     </div>
     <div class="row salt">
-      <span class="label salt-label">Password:</span>
+      <span class="label salt-label">Seed:</span>
       <input
         class="input salt-input"
         type="text"
@@ -104,7 +104,7 @@ function copySeed() {
       justify-content: flex-start;
       align-items: center;
       @media screen and (min-width: 962px) {
-        flex: 0 0 120px;
+        flex: 0 0 170px;
       }
       @media screen and (max-width: 962px) {
         width: 100%;
