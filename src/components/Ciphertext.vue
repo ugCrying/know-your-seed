@@ -87,7 +87,8 @@ function copySeed() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  width: 100%;
+  // padding: 0 20px;
   .row {
     display: flex;
     align-items: center;

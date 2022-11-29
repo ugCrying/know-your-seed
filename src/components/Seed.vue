@@ -80,11 +80,12 @@ function copySeed() {
 
 <style lang="less">
 .seed-comp {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  // padding: 0 20px;
   .row {
     display: flex;
     align-items: center;
