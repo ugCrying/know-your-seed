@@ -165,6 +165,7 @@ function copySeed() {
       }
     }
     .seed {
+      word-break: break-all;
       background-color: rgb(239, 239, 239);
       border-radius: 12px;
       cursor: pointer;

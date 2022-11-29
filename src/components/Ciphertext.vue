@@ -19,7 +19,10 @@
       />
     </div>
     <div class="row">
-      <button :class="['btn', btnDisabled ? 'disabled' : '']" @click="getCiphertext">
+      <button
+        :class="['btn', btnDisabled ? 'disabled' : '']"
+        @click="getCiphertext"
+      >
         {{
           btnDisabled
             ? 'Please enter salt value and seed'
@@ -165,6 +168,7 @@ function copySeed() {
       }
     }
     .seed {
+      word-break: break-all;
       background-color: rgb(239, 239, 239);
       border-radius: 12px;
       cursor: pointer;
