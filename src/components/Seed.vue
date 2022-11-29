@@ -36,8 +36,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <RouterView /> -->
 </template>
 <script setup>
 import { ref, computed } from 'vue'
@@ -52,13 +50,13 @@ function getSeed() {
   if (btnDisabled.value) return
   try {
     let decode = atob(ciphertext.value)
-    console.log(1, decode)
-    let decodeFilter = decode.replace(salt.value, '')
-    console.log(2, decodeFilter)
-    seed.value = atob(decodeFilter)
-    console.log(3, seed.value)
+    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace('==', '')
+    let decodeFilter = decode.replace(saltBase64Part, '')
+    seed.value = decodeURIComponent(atob(decodeFilter))
   } catch (err) {
-    alert('Encoding error, please check whether the salt value or ciphertext is correct.')
+    alert(
+      'Encoding error, please check whether the salt value or ciphertext is correct.'
+    )
   }
 }
 
@@ -85,7 +83,6 @@ function copySeed() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // padding: 0 20px;
   .row {
     display: flex;
     align-items: center;

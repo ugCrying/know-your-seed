@@ -1,7 +1,7 @@
 <!--
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-29 11:15:52
+ * @LastEditTime: 2022-11-29 16:09:21
  * @LastEditors: PX
  * @Description:  
 -->
@@ -16,8 +16,10 @@
         >Get Seed</span
       >
     </div>
-    <Ciphertext v-if="curType === 1" />
-    <Seed v-else />
+    <keep-alive>
+      <Ciphertext v-if="curType === 1" />
+      <Seed v-else />
+    </keep-alive>
   </div>
   <!-- <RouterView /> -->
 </template>

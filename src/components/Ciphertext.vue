@@ -39,8 +39,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <RouterView /> -->
 </template>
 <script setup>
 import { ref, computed } from 'vue'
@@ -54,12 +52,12 @@ const btnDisabled = computed(() => !salt.value || !seed.value)
 function getCiphertext() {
   if (btnDisabled.value) return
   try {
-    let encode = btoa(seed.value)
-    console.log(1, encode)
-    let encodeMix = salt.value + encode
-    console.log(2, encodeMix)
-    ciphertext.value = btoa(encodeMix)
-    console.log(3, ciphertext.value)
+    const seedBase64 = btoa(encodeURIComponent(seed.value))
+    const saltBase64Part = btoa(encodeURIComponent(salt.value)).replace('==', '')
+    const seedBase64FlagIndex = Math.floor(Math.random() * 10) % seedBase64.length
+    let mixBase64 = seedBase64.slice(0, seedBase64FlagIndex) + saltBase64Part + seedBase64.slice(seedBase64FlagIndex)
+    console.log('mixBase64', mixBase64)
+    ciphertext.value = btoa(mixBase64)
   } catch (err) {
     alert(err.message)
   }
@@ -88,7 +86,6 @@ function copySeed() {
   align-items: center;
   justify-content: center;
   width: 100%;
-  // padding: 0 20px;
   .row {
     display: flex;
     align-items: center;
