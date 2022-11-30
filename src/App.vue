@@ -1,7 +1,7 @@
 <!--
  * @Author: PX
  * @Date: 2022-11-28 14:31:52
- * @LastEditTime: 2022-11-30 15:19:18
+ * @LastEditTime: 2022-11-30 15:21:50
  * @LastEditors: PX
  * @Description:  
 -->
@@ -9,12 +9,8 @@
 <template>
   <div class="app-container">
     <div class="header">
-      <span :class="[curType === 1 ? 'active' : '']" @click="changeType(1)"
-        >Generate Ciphertext</span
-      >
-      <span :class="[curType === 2 ? 'active' : '']" @click="changeType(2)"
-        >Get Seed</span
-      >
+      <span :class="[curType === 1 ? 'active' : '']" @click="changeType(1)">Generate Ciphertext</span>
+      <span :class="[curType === 2 ? 'active' : '']" @click="changeType(2)">Get Seed</span>
     </div>
     <keep-alive>
       <Ciphertext v-if="curType === 1" />
@@ -41,20 +37,29 @@ function changeType(type) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
-  // padding: 0 20px;
-  padding: 10rem 20px 0;
+
+  @media screen and (min-width: 962px) {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 962px) {
+    padding: 5rem 20px 0;
+  }
+
 
   .header {
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media screen and (min-width: 962px) {
       font-size: 20px;
       margin-bottom: 30px;
       width: 600px;
     }
+
     @media screen and (max-width: 962px) {
       font-size: 20px;
       margin-bottom: 20px;
@@ -72,6 +77,7 @@ function changeType(type) {
       justify-content: center;
       flex-wrap: wrap;
     }
+
     .active {
       font-size: 25px;
       font-weight: bold;
