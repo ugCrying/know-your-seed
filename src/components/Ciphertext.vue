@@ -81,7 +81,7 @@ function copySeed() {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 600px;
+  // min-height: 600px;
   .row {
     display: flex;
     // align-items: center;
